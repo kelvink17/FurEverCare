@@ -184,6 +184,7 @@ const ProductShowcase = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </div>
   );
 };

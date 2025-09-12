@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "../other/Contact.css";
+import Footer from "./Footer"
 
 const ContactUs = () => {
   const [time, setTime] = useState(new Date());
@@ -169,6 +170,7 @@ const ContactUs = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </div>
   );
 };

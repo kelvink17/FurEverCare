@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./petcare.css";
+import Footer from "./Footer";
 
 const App = () => {
   const [pets, setPets] = useState([
@@ -1101,6 +1102,7 @@ const App = () => {
             </div>
           </div>
         </section>
+      <Footer />
       </div>
     </div>
   );

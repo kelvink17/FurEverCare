@@ -1,6 +1,7 @@
 // import Sidebar from "./Sidebar";
 import "../other/Emergency.css";
 import { useEffect } from "react";
+import Footer from "./Footer"
 
 export default function EmergencyVet() {
   useEffect(() => {
@@ -71,6 +72,7 @@ export default function EmergencyVet() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
