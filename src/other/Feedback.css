@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+:root {
+  --primary-color: #903500;
+  --secondary-color: #ff7e47;
+  --background-color: #faf8f5;
+  --text-color: #333;
+  --text-color-light: #fff;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background-color);
+}
+
+.feedback {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 2rem;
+  border-radius: 15px;
+  background-color: var(--primary-color);
+  width: clamp(300px, 90%, 600px);
+  box-shadow: var(--shadow);
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.feedback-form::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(
+    45deg,
+    var(--secondary-color),
+    var(--primary-color)
+  );
+  border-radius: 18px;
+  z-index: -1;
+  filter: blur(8px) opacity(0.8);
+  transition: filter 0.3s ease;
+}
+
+.feedback-form:hover::before {
+  filter: blur(12px) opacity(1);
+}
+
+.form-title {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-weight: 700;
+  color: var(--text-color-light);
+  margin-bottom: 0.5rem;
+}
+
+.form-group {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.nmcont,
+.emcont,
+.fbcont {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  color: var(--text-color-light);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.label-text {
+  margin-bottom: 0.5rem;
+}
+
+.fbname,
+.fbemail,
+.feedbacktext {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  color: var(--text-color);
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.fbname:focus,
+.fbemail:focus,
+.feedbacktext:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--secondary-color),
+    0 0 0 5px rgba(255, 126, 71, 0.5);
+}
+
+.feedbacktext {
+  height: 120px;
+  resize: vertical;
+}
+
+.submit-btn {
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  background-color: var(--text-color-light);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin-top: 1rem;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  background-color: var(--secondary-color);
+  color: var(--text-color-light);
+}
+.imgs {
+  width: 55px;
+  border-radius: 50%;
+}
+
+@media (max-width: 480px) {
+  .feedback-form {
+    padding: 2rem 1.2rem;
+  }
+}

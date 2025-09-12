@@ -1,0 +1,141 @@
+.testimonial-section {
+  padding: 50px 60px;
+  justify-content: center;
+}
+
+.testimonial-content {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.testimonial-left {
+  text-align: center;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.testimonial-right {
+  margin-top: -7rem;
+}
+
+.testimonial-title {
+  color: #555;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.testimonial-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.stars {
+  color: gold;
+  margin-bottom: 10px;
+}
+
+.testimonial-text {
+  font-style: italic;
+  color: #666;
+  line-height: 1.6;
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+
+.testimonial-author {
+  font-weight: bold;
+  color: #333;
+}
+
+.testimonial-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.author-role {
+  font-weight: normal;
+  color: #999;
+}
+
+.navigation-arrows {
+  margin-top: 20px;
+}
+
+.arrow-btn {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 0 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.testimonial-image-circle {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+  background-image: url("Customer 1.jpg");
+  background-size: cover;
+}
+
+/* ---------------------- */
+/* Media Queries */
+/* ---------------------- */
+
+@media (max-width: 480px) {
+  .testimonial-section {
+    padding: 30px 20px;
+  }
+  .testimonial-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  .testimonial-left {
+    text-align: center;
+  }
+  .testimonial-title,
+  .testimonial-heading {
+    text-align: center;
+  }
+  .testimonial-right {
+    margin-top: 0;
+  }
+  .testimonial-image-circle {
+    width: 150px;
+    height: 150px;
+  }
+  .testimonial-heading {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .testimonial-section {
+    padding: 40px;
+  }
+  .testimonial-content {
+    gap: 3rem;
+  }
+
+  .testimonial-image-circle {
+    width: 150px;
+    height: 150px;
+  }
+  .testimonial-heading {
+    font-size: 1.5rem;
+  }
+  .testimonial-right {
+    margin-top: 0;
+  }
+}

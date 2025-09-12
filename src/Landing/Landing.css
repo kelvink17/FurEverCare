@@ -1,0 +1,260 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.main {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f1eb 0%, #ede4d3 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.landing-form {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.logo img {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+}
+
+.logo-text {
+  font-size: 28px;
+  font-weight: 700;
+  color: #903500;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-label,
+.section-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #424242;
+}
+
+.name-input {
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  background: #fafafa;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.name-input:focus {
+  border-color: #6e2800;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.1);
+}
+
+.role-select {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.role-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #fafafa;
+  position: relative;
+}
+
+.role-option:hover {
+  border-color: #6e2800;
+  background: white;
+  transform: translateY(-1px);
+}
+
+.role-option.selected {
+  border-color: #6e2800;
+  background: white;
+  box-shadow: 0 2px 8px rgba(255, 87, 34, 0.15);
+}
+
+.role-option input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #6e2800;
+}
+
+.role-icon {
+  font-size: 20px;
+  width: 24px;
+  text-align: center;
+}
+
+.role-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: #424242;
+  flex: 1;
+}
+
+.vet-extra {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  background: #fff8f5;
+  border-radius: 8px;
+  border: 1px solid #ffe0d6;
+}
+
+.extra-input {
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  background: white;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.extra-input:focus {
+  border-color: #6e2800;
+  box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.1);
+}
+
+.file-upload-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.file-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+}
+
+.file-upload-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: white;
+  border: 2px dashed #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #666;
+  transition: all 0.2s ease;
+  width: fit-content;
+}
+
+.file-upload-btn:hover {
+  border-color: #6e2800;
+  color: #6e2800;
+}
+
+.file-upload-btn input[type="file"] {
+  display: none;
+}
+
+.vet-preview {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #6e2800;
+  align-self: center;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  background: #903500;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+}
+
+.submit-btn:hover {
+  background: #6e2800;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(255, 87, 34, 0.3);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+  .main {
+    padding: 16px;
+  }
+
+  .landing-form {
+    padding: 24px;
+    gap: 20px;
+  }
+
+  .logo-text {
+    font-size: 24px;
+  }
+
+  .role-option {
+    padding: 14px;
+  }
+
+  .submit-btn {
+    padding: 14px;
+    font-size: 16px;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .role-option:hover {
+    transform: none;
+  }
+
+  .submit-btn:hover {
+    transform: none;
+  }
+
+  .role-option,
+  .submit-btn,
+  .file-upload-btn {
+    min-height: 44px;
+  }
+}
