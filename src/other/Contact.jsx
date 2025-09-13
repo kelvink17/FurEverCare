@@ -4,14 +4,31 @@ import Footer from "./Footer"
 
 const ContactUs = () => {
   const [time, setTime] = useState(new Date());
+  const [visitorCount, setVisitorCount] = useState(0); // Add state for the visitor count
 
   useEffect(() => {
+    // Clock update logic (existing)
     const timer = setInterval(() => setTime(new Date()), 1000);
     return () => clearInterval(timer);
   }, []);
+
   useEffect(() => {
+    // Scroll to top effect (existing)
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
+
+    // Visitor counter logic
+    let currentCount = localStorage.getItem('visitorCount');
+
+    if (currentCount === null) {
+      currentCount = 1;
+    } else {
+      currentCount = parseInt(currentCount) + 1;
+    }
+
+    localStorage.setItem('visitorCount', currentCount);
+    setVisitorCount(currentCount);
+
+  }, []); // The empty array ensures this effect runs only once
 
   const teamMembers = [
     {
@@ -170,7 +187,7 @@ const ContactUs = () => {
           </div>
         </section>
       </div>
-      <Footer />
+      <Footer visitorCount={visitorCount} /> {/* Pass the state as a prop */}
     </div>
   );
 };

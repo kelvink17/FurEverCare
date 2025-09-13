@@ -1,6 +1,6 @@
 import "./Footer.css";
 
-const Footer = () => {
+const Footer = ({ visitorCount }) => {
   return (
     <footer className="main-footer">
       <div className="footer-container">
@@ -22,7 +22,7 @@ const Footer = () => {
             </p>
           </div>
         </div>
-
+        
         <div className="footer-column">
           <h4 className="column-heading">Follow Us</h4>
           <ul className="social-icons">
@@ -68,6 +68,9 @@ const Footer = () => {
           </ul>
         </div>
       </div>
+      <div className="visitor-counter">
+          <p>This website has been visited {visitorCount} times this session.</p>
+        </div>
       <div className="copyright-container">
         <p>&copy; {new Date().getFullYear()} Galacticode. All rights reserved.</p>
       </div>

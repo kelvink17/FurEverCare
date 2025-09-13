@@ -2,22 +2,38 @@
 
 import "../other/About.css";
 import Testimonial from "./Testimonial";
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useState } from "react"; // Added useState
 import { Link } from "react-router-dom";
 import { UserContext } from "../UserContext";
 import Footer from "./Footer";
 
 function App() {
   const { user } = useContext(UserContext);
+  const [visitorCount, setVisitorCount] = useState(0); // Add state for the visitor count
+
   useEffect(() => {
+    // Scroll to top effect (existing)
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
+
+    // Visitor counter logic
+    let currentCount = localStorage.getItem('visitorCount');
+
+    if (currentCount === null) {
+      currentCount = 1;
+    } else {
+      currentCount = parseInt(currentCount) + 1;
+    }
+
+    localStorage.setItem('visitorCount', currentCount);
+    setVisitorCount(currentCount);
+
+  }, []); 
 
   return (
     <div>
       <div className="avet" style={{ marginTop: "40px" }}>
         {user ? `Welcome, ${user.name}` : "Welcome"}
-         <div>Pet: {user.petName}</div>
+          <div>Pet: {user.petName}</div>
       </div>
 
       <div className="floating-icons">
@@ -153,7 +169,7 @@ function App() {
           </div>
         </div>
       </div>
-      <Footer />
+      <Footer visitorCount={visitorCount} /> 
     </div>
   );
 }

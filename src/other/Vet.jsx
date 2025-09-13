@@ -1,8 +1,10 @@
+"use client";
+
 import "../other/Vet.css";
 import Sidebar from "./Sidebar";
 // import { useLocation } from "react-router-dom";
 import { appointments } from "./vetdata";
-import { useEffect, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import Footer from "./Footer";
 import { UserContext } from "../UserContext";
 
@@ -10,11 +12,20 @@ export default function Vet() {
   // const location = useLocation();
   // const { name, specialization, contact, vetImage } = location.state || {};
   const { user } = useContext(UserContext);
+  const [visitorCount, setVisitorCount] = useState(0);
+
   useEffect(() => {
+    const storedCount = localStorage.getItem("siteVisitorCount");
+    const initialCount = storedCount ? Number(storedCount) : 0;
+    const newCount = initialCount + 1;
+    setVisitorCount(newCount);
+    localStorage.setItem("siteVisitorCount", newCount);
+
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
   return (
+    <div>
     <div className="vet">
       <div></div>
       <div className="main2">
@@ -56,6 +67,8 @@ export default function Vet() {
           ))}
         </div>
       </div>
+    </div>
+      <Footer visitorCount={visitorCount} />
     </div>
   );
 }

@@ -1,15 +1,22 @@
 "use client";
 
 import { useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 import "./Shelter.css";
 import { Shelterdata } from "./Shelterdata";
-import { useEffect } from "react";
 import Footer from "./Footer";
 
 export default function Shelter() {
   const location = useLocation();
+  const [visitorCount, setVisitorCount] = useState(0);
 
   useEffect(() => {
+    const storedCount = localStorage.getItem("siteVisitorCount");
+    const initialCount = storedCount ? Number(storedCount) : 0;
+    const newCount = initialCount + 1;
+    setVisitorCount(newCount);
+    localStorage.setItem("siteVisitorCount", newCount);
+
     if (location.hash) {
       const elem = document.getElementById(location.hash.substring(1));
       if (elem) {
@@ -19,10 +26,6 @@ export default function Shelter() {
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     }
   }, [location]);
-
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
 
   return (
     <div className="Smain">
@@ -270,7 +273,7 @@ export default function Shelter() {
           </div>
         </div>
       </section>
-      <Footer />
+      <Footer visitorCount={visitorCount} />
     </div>
   );
 }

@@ -1,12 +1,28 @@
-// import Sidebar from "./Sidebar";
+import { useState, useEffect } from "react";
 import "../other/Emergency.css";
-import { useEffect } from "react";
 import Footer from "./Footer"
 
 export default function EmergencyVet() {
+  const [visitorCount, setVisitorCount] = useState(0); // Add state for the visitor count
+
   useEffect(() => {
+    // Scroll to top effect (existing)
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
+    
+    // Visitor counter logic
+    let currentCount = localStorage.getItem('visitorCount');
+
+    if (currentCount === null) {
+      currentCount = 1;
+    } else {
+      currentCount = parseInt(currentCount) + 1;
+    }
+
+    localStorage.setItem('visitorCount', currentCount);
+    setVisitorCount(currentCount);
+
+  }, []); // The empty array ensures this effect runs only once
+
   return (
     <div>
       <div className="vet">
@@ -72,7 +88,7 @@ export default function EmergencyVet() {
           </div>
         </div>
       </div>
-      <Footer />
+      <Footer visitorCount={visitorCount} /> {/* Pass the state as a prop */}
     </div>
   );
 }

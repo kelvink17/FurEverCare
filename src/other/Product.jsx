@@ -10,8 +10,18 @@ const ProductShowcase = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [sortBy, setSortBy] = useState("name");
+  const [visitorCount, setVisitorCount] = useState(0);
 
   useEffect(() => {
+    // This effect runs only once when the component mounts
+    const storedCount = localStorage.getItem("siteVisitorCount");
+    const initialCount = storedCount ? Number(storedCount) : 0;
+    const newCount = initialCount + 1;
+    setVisitorCount(newCount);
+    localStorage.setItem("siteVisitorCount", newCount);
+    
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
     const timeoutId = setTimeout(() => {
       applyFilters();
     }, 300);
@@ -83,9 +93,7 @@ const ProductShowcase = () => {
     };
     return categoryNames[category] || category;
   };
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
+  
   return (
     <div>
       <div className="productmain">
@@ -184,7 +192,7 @@ const ProductShowcase = () => {
           </div>
         </section>
       </div>
-      <Footer />
+      <Footer visitorCount={visitorCount} />
     </div>
   );
 };

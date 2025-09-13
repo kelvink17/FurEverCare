@@ -1,8 +1,12 @@
-import React, { useState ,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./petcare.css";
 import Footer from "./Footer";
 
 const App = () => {
+  // Add state for the visitor count
+  const [visitorCount, setVisitorCount] = useState(0);
+
+  // Existing pets state
   const [pets, setPets] = useState([
     {
       id: 1,
@@ -58,6 +62,25 @@ const App = () => {
   const [feedingResult, setFeedingResult] = useState(null);
   const [showResultBox, setShowResultBox] = useState(false);
   const [saveStatus, setSaveStatus] = useState({ message: "", type: "" });
+
+  // Use a single useEffect hook for both scrolling and the visitor count
+  useEffect(() => {
+    // Scroll to top effect
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    // Visitor counter logic
+    let currentCount = localStorage.getItem('visitorCount');
+
+    if (currentCount === null) {
+      currentCount = 1;
+    } else {
+      currentCount = parseInt(currentCount) + 1;
+    }
+
+    localStorage.setItem('visitorCount', currentCount);
+    setVisitorCount(currentCount);
+
+  }, []);
 
   const handleNewPetChange = (e) => {
     const { name, value, checked } = e.target;
@@ -167,9 +190,7 @@ const App = () => {
   };
 
   const playAudio = (audioTitle) => console.log("Playing audio: " + audioTitle);
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
+
   return (
     <div className="petcare-container">
       <div className="wrapper">
@@ -821,291 +842,14 @@ const App = () => {
                   </div>
                   <div className="audio-card-h">
                     <div className="audio-thumb-h"></div>
-                    <div className="audio-info-h">
-                      <h4 className="audio-title">Medication Administration</h4>
-                      <p className="audio-desc">
-                        Safe and effective ways to give medications to pets
-                      </p>
-                      <button
-                        onClick={() => playAudio("Medication Administration")}
-                        className="main-btn play-btn"
-                      >
-                        🎵 Play Audio Guide
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="health-section-r">
-                <h3 className="content-heading">
-                  <span className="icon">📹</span>Video Health Demonstrations
-                </h3>
-                <div className="video-list-h">
-                  <div className="video-card-l">
-                    <div className="video-thumb-h"></div>
-                    <div className="video-info-l">
-                      <h4 className="video-title">Oral Care Techniques</h4>
-                      <p className="video-desc">
-                        Step-by-step dental care for dogs and cats to prevent
-                        dental disease
-                      </p>
-                      <button
-                        onClick={() => playVideo("Oral Care Techniques")}
-                        className="main-btn play-btn"
-                      >
-                        ▶ Watch Demo
-                      </button>
-                    </div>
-                  </div>
-                  <div className="video-card-l">
-                    <div className="video-thumb-h"></div>
-                    <div className="video-info-l">
-                      <h4 className="video-title">Weight Management</h4>
-                      <p className="video-desc">
-                        How to assess and maintain healthy weight for optimal
-                        pet health
-                      </p>
-                      <button
-                        onClick={() => playVideo("Weight Management")}
-                        className="main-btn play-btn"
-                      >
-                        ▶ Watch Demo
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="check-grid-h">
-              <div className="check-list-card">
-                <h3 className="content-heading">
-                  <span className="icon">🦷</span>Oral Care
-                </h3>
-                <ul className="check-list-items">
-                  <li>
-                    <input type="checkbox" className="check-list-input" />
-                    <div>
-                      <strong>Daily teeth brushing</strong>
-                      <p className="check-list-desc">Use pet-safe toothpaste</p>
-                    </div>
-                  </li>
-                  <li>
-                    <input type="checkbox" className="check-list-input" />
-                    <div>
-                      <strong>Weekly gum inspection</strong>
-                      <p className="check-list-desc">
-                        Check for redness or swelling
-                      </p>
-                    </div>
-                  </li>
-                  <li>
-                    <input type="checkbox" className="check-list-input" />
-                    <div>
-                      <strong>Dental treats/toys</strong>
-                      <p className="check-list-desc">
-                        Help reduce plaque buildup
-                      </p>
-                    </div>
-                  </li>
-                  <li>
-                    <input type="checkbox" className="check-list-input" />
-                    <div>
-                      <strong>Annual dental cleaning</strong>
-                      <p className="check-list-desc">
-                        Professional veterinary cleaning
-                      </p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div className="check-list-card">
-                <h3 className="content-heading">
-                  <span className="icon">⚖️</span>Weight Management
-                </h3>
-                <ul className="check-list-items">
-                  <li>
-                    <input type="checkbox" className="check-list-input" />
-                    <div>
-                      <strong>Monthly weight checks</strong>
-                      <p className="check-list-desc">Track weight trends</p>
-                    </div>
-                  </li>
-                  <li>
-                    <input type="checkbox" className="check-list-input" />
-                    <div>
-                      <strong>Body condition scoring</strong>
-                      <p className="check-list-desc">Feel for ribs and waist</p>
-                    </div>
-                  </li>
-                  <li>
-                    <input type="checkbox" className="check-list-input" />
-                    <div>
-                      <strong>Portion control</strong>
-                      <p className="check-list-desc">Measure food accurately</p>
-                    </div>
-                  </li>
-                  <li>
-                    <input type="checkbox" className="check-list-input" />
-                    <div>
-                      <strong>Regular exercise</strong>
-                      <p className="check-list-desc">
-                        Daily walks and playtime
-                      </p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div className="check-list-card">
-                <h3 className="content-heading">
-                  <span className="icon">🩺</span>General Care
-                </h3>
-                <ul className="check-list-items">
-                  <li>
-                    <input type="checkbox" className="check-list-input" />
-                    <div>
-                      <strong>Eye discharge cleaning</strong>
-                      <p className="check-list-desc">Use damp cloth daily</p>
-                    </div>
-                  </li>
-                  <li>
-                    <input type="checkbox" className="check-list-input" />
-                    <div>
-                      <strong>Ear cleaning routine</strong>
-                      <p className="check-list-desc">
-                        Check for odor or discharge
-                      </p>
-                    </div>
-                  </li>
-                  <li>
-                    <input type="checkbox" className="check-list-input" />
-                    <div>
-                      <strong>Skin condition checks</strong>
-                      <p className="check-list-desc">
-                        Look for lumps or irritation
-                      </p>
-                    </div>
-                  </li>
-                  <li>
-                    <input type="checkbox" className="check-list-input" />
-                    <div>
-                      <strong>Parasite prevention</strong>
-                      <p className="check-list-desc">
-                        Flea, tick, and worm prevention
-                      </p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <div className="divider"></div>
-
-        <section id="training" className="page-section">
-          <div className="card-ui">
-            <h2 className="section-heading">
-              <span className="icon">🎓</span>Training Resources
-            </h2>
-            <div className="content-grid-half-h">
-              <div className="training-section-l">
-                <h3 className="content-heading">
-                  <span className="icon">🎧</span>Audio Training Sessions
-                </h3>
-                <div className="audio-list-t">
-                  <div className="audio-card-t">
-                    <div className="audio-thumb-t"></div>
-                    <div className="audio-info-t">
-                      <h4 className="audio-title">Basic Commands Training</h4>
-                      <p className="audio-desc">
-                        Sit, stay, come, down - fundamental commands every pet
-                        should know
-                      </p>
-                      <div className="audio-actions-t">
-                        <button
-                          onClick={() => playAudio("Basic Commands Training")}
-                          className="main-btn play-btn"
-                        >
-                          🎵 Play Session
-                        </button>
-                        <span className="audio-duration-t">15 min</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="audio-card-t">
-                    <div className="audio-thumb-t"></div>
-                    <div className="audio-info-t">
-                      <h4 className="audio-title">Positive Reinforcement</h4>
-                      <p className="audio-desc">
-                        Reward-based training techniques that build trust and
-                        motivation
-                      </p>
-                      <div className="audio-actions-t">
-                        <button
-                          onClick={() => playAudio("Positive Reinforcement")}
-                          className="main-btn play-btn"
-                        >
-                          🎵 Play Session
-                        </button>
-                        <span className="audio-duration-t">12 min</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="audio-card-t">
-                    <div className="audio-thumb-t"></div>
-                    <div className="audio-info-t">
-                      <h4 className="audio-title">
-                        Behavioral Problem Solving
-                      </h4>
-                      <p className="audio-desc">
-                        Address common behavioral issues like barking, jumping,
-                        and chewing
-                      </p>
-                      <div className="audio-actions-t">
-                        <button
-                          onClick={() =>
-                            playAudio("Behavioral Problem Solving")
-                          }
-                          className="main-btn play-btn"
-                        >
-                          🎵 Play Session
-                        </button>
-                        <span className="audio-duration-t">18 min</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="training-section-r">
-                <h3 className="content-heading">
-                  <span className="icon">📹</span>Video Training Clips
-                </h3>
-                <div className="video-list-t">
-                  <div className="video-card-l-t">
-                    <div className="video-thumb-t"></div>
-                    <div className="video-info-l-t">
-                      <h4 className="video-title">Leash Training Basics</h4>
-                      <p className="video-desc">
-                        Step-by-step leash training for puppies and adult dogs
-                      </p>
-                      <div className="video-actions-t">
-                        <button
-                          onClick={() => playVideo("Leash Training Basics")}
-                          className="main-btn play-btn"
-                        >
-                          ▶ Watch Demo
-                        </button>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
-      <Footer />
       </div>
+      <Footer visitorCount={visitorCount} />
     </div>
   );
 };
