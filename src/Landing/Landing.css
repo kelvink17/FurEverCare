@@ -1,0 +1,281 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.the-void {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f1eb 0%, #ede4d3 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.the-form-of-all-forms {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.the-logo-that-shines {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.the-logo-that-shines img {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+}
+
+.logo-words-of-power {
+  font-size: 28px;
+  font-weight: 700;
+  color: #903500;
+}
+
+.the-section-of-truth {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label-of-destiny,
+.category-whisperer {
+  font-size: 16px;
+  font-weight: 600;
+  color: #424242;
+}
+
+.the-name-grabber {
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  background: #fafafa;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.the-name-grabber:focus {
+  border-color: #6e2800;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.1);
+}
+
+.the-role-choosers {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.role-card-of-fate {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #fafafa;
+  position: relative;
+}
+
+.role-card-of-fate:hover {
+  border-color: #6e2800;
+  background: white;
+  transform: translateY(-1px);
+}
+
+.role-card-of-fate.selected {
+  border-color: #6e2800;
+  background: white;
+  box-shadow: 0 2px 8px rgba(255, 87, 34, 0.15);
+}
+
+.role-card-of-fate input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #6e2800;
+}
+
+.the-icon-of-power {
+  font-size: 20px;
+  width: 24px;
+  text-align: center;
+}
+
+.the-words-of-label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #424242;
+  flex: 1;
+}
+
+.the-vet-secrets {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  background: #fff8f5;
+  border-radius: 8px;
+  border: 1px solid #ffe0d6;
+}
+
+.the-special-input {
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  background: white;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.the-special-input:focus {
+  border-color: #6e2800;
+  box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.1);
+}
+
+.the-photo-uploader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.the-photo-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+}
+
+.the-button-of-upload {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: white;
+  border: 2px dashed #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #666;
+  transition: all 0.2s ease;
+  width: fit-content;
+}
+
+.the-button-of-upload:hover {
+  border-color: #6e2800;
+  color: #6e2800;
+}
+
+.the-button-of-upload input[type="file"] {
+  display: none;
+}
+
+.the-preview-of-faces {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #6e2800;
+  align-self: center;
+}
+
+.the-button-of-submission {
+  width: 100%;
+  padding: 16px;
+  background: #903500;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+}
+
+.the-button-of-submission:hover {
+  background: #6e2800;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(255, 87, 34, 0.3);
+}
+
+.the-button-of-submission:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+  .the-void {
+    padding: 16px;
+  }
+
+  .the-form-of-all-forms {
+    padding: 24px;
+    gap: 20px;
+  }
+
+  .logo-words-of-power {
+    font-size: 24px;
+  }
+
+  .role-card-of-fate {
+    padding: 14px;
+  }
+
+  .the-button-of-submission {
+    padding: 14px;
+    font-size: 16px;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .role-card-of-fate:hover {
+    transform: none;
+  }
+
+  .the-button-of-submission:hover {
+    transform: none;
+  }
+
+  .role-card-of-fate,
+  .the-button-of-submission,
+  .the-button-of-upload {
+    min-height: 44px;
+  }
+}
+.error-message {
+  color: #d32f2f;
+  background-color: #ffebee;
+  border: 1px solid #ef9a9a;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 
