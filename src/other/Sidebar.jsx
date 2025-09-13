@@ -7,10 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { UserContext } from "../UserContext";
 
 export default function Sidebar() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(() => {
-    const savedState = localStorage.getItem("isSidebarOpen");
-    return savedState === "false"; 
-  });
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const { user } = useContext(UserContext);
   const navigate = useNavigate();
