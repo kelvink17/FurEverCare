@@ -9,7 +9,7 @@ import { UserContext } from "../UserContext";
 export default function Sidebar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(() => {
     const savedState = localStorage.getItem("isSidebarOpen");
-    return savedState === "false"; 
+    return savedState === "true"; 
   });
 
   const { user } = useContext(UserContext);
