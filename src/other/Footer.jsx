@@ -15,8 +15,7 @@ const Footer = () => {
           <h4 className="column-heading">Company</h4>
           <div className="footer-company">
             <p>
-              Email:&ebsn
-              <a href="mailto:kelvinkokorie@gmail.com">FurEvercare@gmail.com</a>
+              Email: <a href="mailto:kelvinkokorie@gmail.com">FurEvercare@gmail.com</a>
             </p>
             <p>
               Phone: <a href="tel:+2349036728132">+2349036728132</a>

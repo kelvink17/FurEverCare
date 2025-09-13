@@ -8,15 +8,13 @@ import { UserContext } from "../UserContext";
 
 export default function Sidebar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(() => {
-    // Retrieve the state from localStorage on initial load
     const savedState = localStorage.getItem("isSidebarOpen");
-    return savedState === "true"; // Convert the stored string back to a boolean
+    return savedState === "false"; 
   });
 
   const { user } = useContext(UserContext);
   const navigate = useNavigate();
 
-  // Use useEffect to save the state to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem("isSidebarOpen", isSidebarOpen);
   }, [isSidebarOpen]);
@@ -32,7 +30,7 @@ export default function Sidebar() {
       navigate(path);
     }
   };
-
+ 
   const roleLinks = {
     about: [
       { to: "/about", label: "About Us", icon: "fa-circle-info" },
@@ -73,7 +71,7 @@ export default function Sidebar() {
       },
       { to: "/shelter/#ss", label: "Success Stories", icon: "fa-trophy" },
       { to: "/shelter/#gi", label: "Get Involved", icon: "fa-handshake" },
-      { to: "/shelter/location", label: "Location", icon: "fa-location-dot" },
+      { to: "/contact/#view-map", label: "Location", icon: "fa-location-dot" },
     ],
   };
 
@@ -149,7 +147,8 @@ export default function Sidebar() {
                 </li>
               </div>
             )}
-            {user && (
+          </ul>
+           {user && (
               <div className="user-account">
                 <div className="user-profile">
                   <div className="user-detail">
@@ -157,17 +156,16 @@ export default function Sidebar() {
                     <span>{user.specialization || user.role}</span>
                   </div>
                 </div>
-                <li>
+                <div>
                   <a href="/">
                     <span className="material-symbols-outlined">
                       <i className="fas fa-sign-out-alt"></i>
                     </span>
                     Logout
                   </a>
-                </li>
+                </div>
               </div>
             )}
-          </ul>
         </aside>
       </div>
     </div>

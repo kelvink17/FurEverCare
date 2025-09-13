@@ -12,6 +12,7 @@ import Emergency from "./other/Emergency";
 import Petcare from "./other/pet-care";
 import ProductShowcase from "./other/Product";
 import ContactUs from "./other/Contact";
+import Marquee from "./Marquee";
 
 function DashboardLayout({ children }) {
   return (
@@ -172,6 +173,7 @@ export default function App() {
 
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
+      <Marquee />
     </div>
   );
 }

@@ -49,7 +49,7 @@ const ContactUs = () => {
     {
       id: 5,
       name: "Gabriel Olagoke Stephen",
-      role: "Professional Feces Parking Expert ",
+      role: "Pet Nutritionist",
       email: "Stephengabriel123401@gmail.com",
       phone: "+234 906 048 2813",
       image: "/grumpy.jpg",
@@ -118,7 +118,7 @@ const ContactUs = () => {
                 </div>
               </div>
               <br></br>
-              <div className="map-container">
+              <div id="view-map" className="map-container">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.6087209167226!2d3.8882646!3d7.397663799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10398d6a657b14c9%3A0xb43849f101727e38!2sAptech%20Ibadan!5e0!3m2!1sen!2sng!4v1757514614361!5m2!1sen!2sng"
                   width="100%"
