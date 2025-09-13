@@ -192,6 +192,7 @@ const App = () => {
   const playAudio = (audioTitle) => console.log("Playing audio: " + audioTitle);
 
   return (
+    <div>
     <div className="petcare-container">
       <div className="wrapper">
         <header className="site-header">
@@ -849,6 +850,7 @@ const App = () => {
           </div>
         </section>
       </div>
+    </div>
       <Footer visitorCount={visitorCount} />
     </div>
   );
