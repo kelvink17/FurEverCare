@@ -47,6 +47,7 @@ export default function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
+    <div>
     <div className={`app ${isLoaded ? "loaded" : ""}`}>
       {/* floating stuffs */}
       <div className="float-element paw-1">🐾</div>
@@ -173,6 +174,7 @@ export default function App() {
 
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
+    </div>
       <Marquee />
     </div>
   );
