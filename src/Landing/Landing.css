@@ -4,8 +4,7 @@
   box-sizing: border-box;
 }
 
-
-.main {
+.the-void {
   min-height: 100vh;
   background: linear-gradient(135deg, #f5f1eb 0%, #ede4d3 100%);
   display: flex;
@@ -14,7 +13,7 @@
   padding: 20px;
 }
 
-.landing-form {
+.the-form-of-all-forms {
   background: white;
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -26,7 +25,7 @@
   gap: 24px;
 }
 
-.logo {
+.the-logo-that-shines {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,32 +33,32 @@
   margin-bottom: 8px;
 }
 
-.logo img {
+.the-logo-that-shines img {
   width: 48px;
   height: 48px;
   border-radius: 8px;
 }
 
-.logo-text {
+.logo-words-of-power {
   font-size: 28px;
   font-weight: 700;
   color: #903500;
 }
 
-.form-section {
+.the-section-of-truth {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.input-label,
-.section-label {
+.label-of-destiny,
+.category-whisperer {
   font-size: 16px;
   font-weight: 600;
   color: #424242;
 }
 
-.name-input {
+.the-name-grabber {
   padding: 12px 16px;
   border: 2px solid #e0e0e0;
   border-radius: 8px;
@@ -69,19 +68,19 @@
   outline: none;
 }
 
-.name-input:focus {
+.the-name-grabber:focus {
   border-color: #6e2800;
   background: white;
   box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.1);
 }
 
-.role-select {
+.the-role-choosers {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.role-option {
+.role-card-of-fate {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -94,38 +93,38 @@
   position: relative;
 }
 
-.role-option:hover {
+.role-card-of-fate:hover {
   border-color: #6e2800;
   background: white;
   transform: translateY(-1px);
 }
 
-.role-option.selected {
+.role-card-of-fate.selected {
   border-color: #6e2800;
   background: white;
   box-shadow: 0 2px 8px rgba(255, 87, 34, 0.15);
 }
 
-.role-option input[type="radio"] {
+.role-card-of-fate input[type="radio"] {
   width: 20px;
   height: 20px;
   accent-color: #6e2800;
 }
 
-.role-icon {
+.the-icon-of-power {
   font-size: 20px;
   width: 24px;
   text-align: center;
 }
 
-.role-text {
+.the-words-of-label {
   font-size: 16px;
   font-weight: 500;
   color: #424242;
   flex: 1;
 }
 
-.vet-extra {
+.the-vet-secrets {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -135,7 +134,7 @@
   border: 1px solid #ffe0d6;
 }
 
-.extra-input {
+.the-special-input {
   padding: 12px 16px;
   border: 2px solid #e0e0e0;
   border-radius: 8px;
@@ -145,24 +144,24 @@
   outline: none;
 }
 
-.extra-input:focus {
+.the-special-input:focus {
   border-color: #6e2800;
   box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.1);
 }
 
-.file-upload-section {
+.the-photo-uploader {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.file-label {
+.the-photo-label {
   font-size: 14px;
   font-weight: 500;
   color: #666;
 }
 
-.file-upload-btn {
+.the-button-of-upload {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -177,16 +176,16 @@
   width: fit-content;
 }
 
-.file-upload-btn:hover {
+.the-button-of-upload:hover {
   border-color: #6e2800;
   color: #6e2800;
 }
 
-.file-upload-btn input[type="file"] {
+.the-button-of-upload input[type="file"] {
   display: none;
 }
 
-.vet-preview {
+.the-preview-of-faces {
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -195,7 +194,7 @@
   align-self: center;
 }
 
-.submit-btn {
+.the-button-of-submission {
   width: 100%;
   padding: 16px;
   background: #903500;
@@ -209,59 +208,59 @@
   margin-top: 8px;
 }
 
-.submit-btn:hover {
+.the-button-of-submission:hover {
   background: #6e2800;
   transform: translateY(-2px);
   box-shadow: 0 4px 16px rgba(255, 87, 34, 0.3);
 }
 
-.submit-btn:active {
+.the-button-of-submission:active {
   transform: translateY(0);
 }
 
 @media (max-width: 640px) {
-  .main {
+  .the-void {
     padding: 16px;
   }
 
-  .landing-form {
+  .the-form-of-all-forms {
     padding: 24px;
     gap: 20px;
   }
 
-  .logo-text {
+  .logo-words-of-power {
     font-size: 24px;
   }
 
-  .role-option {
+  .role-card-of-fate {
     padding: 14px;
   }
 
-  .submit-btn {
+  .the-button-of-submission {
     padding: 14px;
     font-size: 16px;
   }
 }
 
 @media (hover: none) and (pointer: coarse) {
-  .role-option:hover {
+  .role-card-of-fate:hover {
     transform: none;
   }
 
-  .submit-btn:hover {
+  .the-button-of-submission:hover {
     transform: none;
   }
 
-  .role-option,
-  .submit-btn,
-  .file-upload-btn {
+  .role-card-of-fate,
+  .the-button-of-submission,
+  .the-button-of-upload {
     min-height: 44px;
   }
 }
 .error-message {
-  color: #d32f2f; 
-  background-color: #ffebee; 
-  border: 1px solid #ef9a9a; 
+  color: #d32f2f;
+  background-color: #ffebee;
+  border: 1px solid #ef9a9a;
   padding: 12px;
   border-radius: 8px;
   text-align: center;
@@ -279,4 +278,4 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
+} 
