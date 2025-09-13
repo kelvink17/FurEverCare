@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect } from "react";
 import "./petcare.css";
 import Footer from "./Footer";
 
@@ -167,12 +167,14 @@ const App = () => {
   };
 
   const playAudio = (audioTitle) => console.log("Playing audio: " + audioTitle);
-
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   return (
     <div className="petcare-container">
       <div className="wrapper">
         <header className="site-header">
-          <h1 className="main-logo">🐾 PetCare Pro</h1>
+          <h1 className="main-logo">🐾 Furever Care</h1>
           <p className="tagline">
             Complete care management for your beloved pets
           </p>

@@ -10,6 +10,7 @@ export default function Landing() {
   const [specialization, setSpecialization] = useState("");
   const [contact, setContact] = useState("");
   const [vetImage, setVetImage] = useState(null);
+  const [petName,setPetName]=useState("")
 
   const { setUser } = useContext(UserContext);
 
@@ -27,7 +28,7 @@ export default function Landing() {
       return;
     }
 
-    setUser({ name, role, specialization, contact, vetImage });
+    setUser({ name, role, specialization, contact, vetImage,petName });
     navigate(`/${role}`);
   };
 
@@ -97,6 +98,17 @@ export default function Landing() {
             </label>
           </div>
         </div>
+
+        {role === "about" && (
+          <div>
+            <input type="text" 
+            className="extra-input"
+            placeholder="Enter Pet Name"
+            value={petName}
+            onChange={(e)=> setPetName(e.target.value)}
+            />
+          </div>
+        )}
 
         {role === "vet" && (
           <div className="vet-extra">

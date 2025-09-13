@@ -17,6 +17,7 @@ function App() {
     <div>
       <div className="avet" style={{ marginTop: "40px" }}>
         {user ? `Welcome, ${user.name}` : "Welcome"}
+         <div>Pet: {user.petName}</div>
       </div>
 
       <div className="floating-icons">
