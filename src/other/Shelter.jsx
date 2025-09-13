@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import "./Shelter.css";
 import { Shelterdata } from "./Shelterdata";
 import { useEffect } from "react";
+import Footer from "./Footer";
 
 export default function Shelter() {
   const location = useLocation();
@@ -269,6 +270,7 @@ export default function Shelter() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
